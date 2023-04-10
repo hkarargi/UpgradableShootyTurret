@@ -169,4 +169,10 @@
         <Private>False</Private>
       </Reference>
     </ItemGroup>
+	
+    <ItemGroup>
+      <Folder Include="TowerImg\BottomPath\" />
+      <Folder Include="TowerImg\MiddlePath\" />
+      <Folder Include="TowerImg\TopPath\" />
+    </ItemGroup>
 </Project>
