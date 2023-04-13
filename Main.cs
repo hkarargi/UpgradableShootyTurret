@@ -150,7 +150,7 @@ namespace UpgradableShootyTurret
             public override void ApplyUpgrade(TowerModel towerModel)
             {
                 AttackModel attackModel = towerModel.GetBehavior<AttackModel>();
-                attackModel.weapons[0].projectile.display = new PrefabReference() { guidRef = "0ddd8752be0d3554cb0db6abe6686e8e" };
+                attackModel.weapons[0].projectile.display = new PrefabReference() { guidRef = "fcddee8a92f5d2e4d8605a8924566620" };
                 attackModel.weapons[0].projectile.GetDamageModel().damage += 2;
                 attackModel.weapons[0].projectile.pierce += 5;
 
