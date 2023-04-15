@@ -98,11 +98,11 @@ namespace UpgradableShootyTurret
 
 
                 //final touches
-                //towerModel.targetTypes = fromShootyTurret.targetTypes;
-                //attackModel.GetBehavior<TargetFirstModel>().isOnSubTower = false;
-                //attackModel.GetBehavior<TargetLastModel>().isOnSubTower = false;
-                //attackModel.GetBehavior<TargetCloseModel>().isOnSubTower = false;
-                //attackModel.GetBehavior<TargetStrongModel>().isOnSubTower = false;
+                towerModel.targetTypes = fromShootyTurret.targetTypes;
+                attackModel.GetBehavior<TargetFirstModel>().isOnSubTower = false;
+                attackModel.GetBehavior<TargetLastModel>().isOnSubTower = false;
+                attackModel.GetBehavior<TargetCloseModel>().isOnSubTower = false;
+                attackModel.GetBehavior<TargetStrongModel>().isOnSubTower = false;
             }
             public override string Icon => "6dc10060b4cb6174992724ee4ff00d95";
             public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
