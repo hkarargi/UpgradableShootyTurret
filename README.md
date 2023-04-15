@@ -11,4 +11,5 @@
 
 - Has broken models for upgrades 3, 4, and 5
 
+- Special thanks to Silentstorm and all those who helped me in 1330 Studios server and BTD6 Modding & Discussion server.
 [![Requires BTD6 Mod Helper](https://raw.githubusercontent.com/gurrenm3/BTD-Mod-Helper/master/banner.png)](https://github.com/gurrenm3/BTD-Mod-Helper#readme)
