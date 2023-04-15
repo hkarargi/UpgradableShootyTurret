@@ -1,4 +1,4 @@
-<a href="https://github.com/hkarargi/UpgradableShootyTurret">
+<a href="https://github.com/hkarargi/UpgradableShootyTurret/releases/download/Release/Shooty.Turret.dll">
     <img align="left" alt="ShootyTurret" height="90" src="ShootyTurret.png">
     <img align="right" alt="Download" height="75" src="https://raw.githubusercontent.com/gurrenm3/BTD-Mod-Helper/master/BloonsTD6%20Mod%20Helper/Resources/DownloadBtn.png">
 </a>
