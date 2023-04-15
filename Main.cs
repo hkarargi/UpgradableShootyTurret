@@ -72,7 +72,6 @@ namespace UpgradableShootyTurret
                 //stuff
                 var fromShootyTurret = Game.instance.model.GetTowerFromId("ShootyTurretTower");
                 towerModel.RemoveBehavior<AttackModel>();
-                towerModel.AddBehavior(fromShootyTurret.GetBehavior<AttackModel>().Duplicate());
                 var attackModel = towerModel.GetBehavior<AttackModel>();
                 attackModel.weapons[0].projectile.GetBehavior<TravelStraitModel>().Lifespan = 99;
                 //attackModel.weapons[0].projectile.display = "e57060793f03d3046a9f97b8cb24986a";
@@ -95,13 +94,15 @@ namespace UpgradableShootyTurret
                 //makes tower look like shooty turret.
                 towerModel.display = new PrefabReference() { guidRef = "c834b6ab8cd5afc429065acb83992abb" };
                 towerModel.GetBehavior<DisplayModel>().display = new PrefabReference() { guidRef = "c834b6ab8cd5afc429065acb83992abb" };
+                towerModel.GetBehavior<DisplayModel>().attack = new PrefabReference() { guidRef = "c834b6ab8cd5afc429065acb83992abb" };
+
 
                 //final touches
-                towerModel.targetTypes = fromShootyTurret.targetTypes;
-                attackModel.GetBehavior<TargetFirstModel>().isOnSubTower = false;
-                attackModel.GetBehavior<TargetLastModel>().isOnSubTower = false;
-                attackModel.GetBehavior<TargetCloseModel>().isOnSubTower = false;
-                attackModel.GetBehavior<TargetStrongModel>().isOnSubTower = false;
+                //towerModel.targetTypes = fromShootyTurret.targetTypes;
+                //attackModel.GetBehavior<TargetFirstModel>().isOnSubTower = false;
+                //attackModel.GetBehavior<TargetLastModel>().isOnSubTower = false;
+                //attackModel.GetBehavior<TargetCloseModel>().isOnSubTower = false;
+                //attackModel.GetBehavior<TargetStrongModel>().isOnSubTower = false;
             }
             public override string Icon => "6dc10060b4cb6174992724ee4ff00d95";
             public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
@@ -151,6 +152,8 @@ namespace UpgradableShootyTurret
             {
                 AttackModel attackModel = towerModel.GetBehavior<AttackModel>();
                 attackModel.weapons[0].projectile.display = new PrefabReference() { guidRef = "fcddee8a92f5d2e4d8605a8924566620" };
+                towerModel.display = new PrefabReference() { guidRef = "1f72b507ec539e84c84e25011d855974" };
+                towerModel.GetBehavior<DisplayModel>().display = new PrefabReference() { guidRef = "1f72b507ec539e84c84e25011d855974" };
                 attackModel.weapons[0].projectile.GetDamageModel().damage += 2;
                 attackModel.weapons[0].projectile.pierce += 5;
 
@@ -170,6 +173,8 @@ namespace UpgradableShootyTurret
             public override void ApplyUpgrade(TowerModel towerModel)
             {
                 AttackModel attackModel = towerModel.GetBehavior<AttackModel>();
+                towerModel.display = new PrefabReference() { guidRef = "9a4bf86ce3861a64c9e118a693db992f" };
+                towerModel.GetBehavior<DisplayModel>().display = new PrefabReference() { guidRef = "9a4bf86ce3861a64c9e118a693db992f" };
                 attackModel.weapons[0].emission = new ArcEmissionModel("ArcEmissionModel_Tripapult", 3, 0, 15, null, false);
                 attackModel.weapons[0].projectile.GetDamageModel().damage += 2;
             }
