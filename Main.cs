@@ -94,7 +94,6 @@ namespace UpgradableShootyTurret
                 //makes tower look like shooty turret.
                 towerModel.display = new PrefabReference() { guidRef = "c834b6ab8cd5afc429065acb83992abb" };
                 towerModel.GetBehavior<DisplayModel>().display = new PrefabReference() { guidRef = "c834b6ab8cd5afc429065acb83992abb" };
-                towerModel.GetBehavior<DisplayModel>().attack = new PrefabReference() { guidRef = "c834b6ab8cd5afc429065acb83992abb" };
 
 
                 //final touches
