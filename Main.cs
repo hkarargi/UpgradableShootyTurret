@@ -72,6 +72,7 @@ namespace UpgradableShootyTurret
                 //stuff
                 var fromShootyTurret = Game.instance.model.GetTowerFromId("ShootyTurretTower");
                 towerModel.RemoveBehavior<AttackModel>();
+                towerModel.AddBehavior(fromShootyTurret.GetBehavior<AttackModel>().Duplicate());
                 var attackModel = towerModel.GetBehavior<AttackModel>();
                 attackModel.weapons[0].projectile.GetBehavior<TravelStraitModel>().Lifespan = 99;
                 //attackModel.weapons[0].projectile.display = "e57060793f03d3046a9f97b8cb24986a";
