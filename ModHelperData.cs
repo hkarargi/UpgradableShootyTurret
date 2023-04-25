@@ -3,7 +3,7 @@ namespace UpgradableShootyTurret
     public static class ModHelperData
     {
         public const string WorksOnVersion = "36.1";
-        public const string Version = "1.0.0";
+        public const string Version = "1.1.0";
         public const string Name = "Upgradable Shooty Turret";
 
         public const string Description =
@@ -12,5 +12,6 @@ namespace UpgradableShootyTurret
 
         public const string RepoOwner = "hkarargi";
         public const string RepoName = "UpgradableShootyTurret";
+        public const string Icon = "ShootyTurret.png";
     }
 }
