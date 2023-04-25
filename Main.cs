@@ -46,6 +46,7 @@ using BTD_Mod_Helper.Api.Towers;
 using Il2CppAssets.Scripts.Simulation.Towers.Behaviors.Attack.Behaviors;
 using Il2CppAssets.Scripts.Simulation.Towers.Emissions;
 using Il2CppAssets.Scripts.Unity.Towers.Emissions;
+using Il2CppSystem.Dynamic.Utils;
 
 [assembly: MelonInfo(typeof(UpgradableShootyTurret.Main), UpgradableShootyTurret.ModHelperData.Name, UpgradableShootyTurret.ModHelperData.Version, UpgradableShootyTurret.ModHelperData.RepoOwner)]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
@@ -70,12 +71,10 @@ namespace UpgradableShootyTurret
             public override void ModifyBaseTowerModel(TowerModel towerModel)
             {
                 //stuff
-                var fromShootyTurret = Game.instance.model.GetTowerFromId("ShootyTurretTower");
-                towerModel.RemoveBehavior<AttackModel>();
-                towerModel.AddBehavior(fromShootyTurret.GetBehavior<AttackModel>().Duplicate());
+                towerModel.GetBehavior<DisplayModel>().ignoreRotation = true;
+                towerModel.AddBehavior(new DisplayModel("DisplayModel_UST_Top", new PrefabReference() { guidRef = "6a8505a5c8dd849489c750e3b65047dc" }, 0, default, 1, false, 0));
                 var attackModel = towerModel.GetBehavior<AttackModel>();
-                attackModel.weapons[0].projectile.GetBehavior<TravelStraitModel>().Lifespan = 99;
-                //attackModel.weapons[0].projectile.display = "e57060793f03d3046a9f97b8cb24986a";
+                attackModel.weapons[0].projectile.GetBehavior<TravelStraitModel>().Lifespan = 4;
                 attackModel.weapons[0].projectile.display = new PrefabReference() { guidRef = "e57060793f03d3046a9f97b8cb24986a" };
 
                 //pierce, damage, and range
@@ -84,25 +83,12 @@ namespace UpgradableShootyTurret
                 attackModel.range = 50;
                 towerModel.range = 50;
 
-                //change radius to 75% of 100 mortar
-                // attackModel.weapons[0].projectile.GetBehavior<CreateProjectileOnContactModel>().projectile.radius = 28 * 0.75f;
-
-
-
                 //how many seconds until it shoots
                 attackModel.weapons[0].Rate = 1.5f;
 
                 //makes tower look like shooty turret.
                 towerModel.display = new PrefabReference() { guidRef = "c834b6ab8cd5afc429065acb83992abb" };
                 towerModel.GetBehavior<DisplayModel>().display = new PrefabReference() { guidRef = "c834b6ab8cd5afc429065acb83992abb" };
-
-
-                //final touches
-                towerModel.targetTypes = fromShootyTurret.targetTypes;
-                attackModel.GetBehavior<TargetFirstModel>().isOnSubTower = false;
-                attackModel.GetBehavior<TargetLastModel>().isOnSubTower = false;
-                attackModel.GetBehavior<TargetCloseModel>().isOnSubTower = false;
-                attackModel.GetBehavior<TargetStrongModel>().isOnSubTower = false;
             }
             public override string Icon => "6dc10060b4cb6174992724ee4ff00d95";
             public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
@@ -154,9 +140,10 @@ namespace UpgradableShootyTurret
                 attackModel.weapons[0].projectile.display = new PrefabReference() { guidRef = "fcddee8a92f5d2e4d8605a8924566620" };
                 towerModel.display = new PrefabReference() { guidRef = "1f72b507ec539e84c84e25011d855974" };
                 towerModel.GetBehavior<DisplayModel>().display = new PrefabReference() { guidRef = "1f72b507ec539e84c84e25011d855974" };
-                attackModel.weapons[0].projectile.GetDamageModel().damage += 2;
+                towerModel.GetBehavior<DisplayModel>().ignoreRotation = false;
+                towerModel.RemoveBehavior(towerModel.behaviors.First(a => a.name == "DisplayModel_UST_Top"));
+                attackModel.weapons[0].projectile.GetDamageModel().damage += 3;
                 attackModel.weapons[0].projectile.pierce += 5;
-
             }
             public override string Icon => "6dc10060b4cb6174992724ee4ff00d95";
             public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
