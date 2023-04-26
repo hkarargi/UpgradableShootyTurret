@@ -1,171 +1,170 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
-        <RootNamespace>ShootyTurret</RootNamespace>
+        <RootNamespace>UpgradableShootyTurret</RootNamespace>
         <Configurations>Debug;Release</Configurations>
         <Nullable>enable</Nullable>
-        <AssemblyName>Shooty Turret</AssemblyName>
+        <AssemblyName>UpgradableShootyTurret</AssemblyName>
         <LangVersion>latest</LangVersion>
         <Optimize>False</Optimize>
         <DebugType>embedded</DebugType>
         <BaseOutputPath></BaseOutputPath>
     </PropertyGroup>
-	
     <ItemGroup>
       <Reference Include="0Harmony">
-        <HintPath>..\..\..\..\BTD6 DLLs References\0Harmony.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\0Harmony.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Assembly-CSharp">
-        <HintPath>..\..\..\..\BTD6 DLLs References\Assembly-CSharp.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\Assembly-CSharp.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Assembly-CSharp-firstpass">
-        <HintPath>..\..\..\..\BTD6 DLLs References\Assembly-CSharp-firstpass.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\Assembly-CSharp-firstpass.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="BloonsTD6 Mod Helper">
-        <HintPath>..\..\..\..\BTD6 DLLs References\Btd6ModHelper.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\Btd6ModHelper.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Il2CppInterop.Common">
-        <HintPath>..\..\..\..\BTD6 DLLs References\Il2CppInterop.Common.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\Il2CppInterop.Common.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Il2CppInterop.Runtime">
-        <HintPath>..\..\..\..\BTD6 DLLs References\Il2CppInterop.Runtime.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\Il2CppInterop.Runtime.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Il2Cppmscorlib">
-        <HintPath>..\..\..\..\BTD6 DLLs References\Il2Cppmscorlib.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\Il2Cppmscorlib.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Il2CppNewtonsoft.Json">
-        <HintPath>..\..\..\..\BTD6 DLLs References\Il2CppNewtonsoft.Json.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\Il2CppNewtonsoft.Json.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Il2CppNinjaKiwi.Common">
-        <HintPath>..\..\..\..\BTD6 DLLs References\Il2CppNinjaKiwi.Common.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\Il2CppNinjaKiwi.Common.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Il2CppNinjaKiwi.LiNK">
-        <HintPath>..\..\..\..\BTD6 DLLs References\Il2CppNinjaKiwi.LiNK.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\Il2CppNinjaKiwi.LiNK.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Il2CppSystem">
-        <HintPath>..\..\..\..\BTD6 DLLs References\Il2CppSystem.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\Il2CppSystem.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Il2CppSystem.Core">
-        <HintPath>..\..\..\..\BTD6 DLLs References\Il2CppSystem.Core.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\Il2CppSystem.Core.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="MelonLoader">
-        <HintPath>..\..\..\..\BTD6 DLLs References\MelonLoader.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\MelonLoader.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="MelonLoader.NativeHost">
-        <HintPath>..\..\..\..\BTD6 DLLs References\MelonLoader.NativeHost.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\MelonLoader.NativeHost.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Newtonsoft.Json">
-        <HintPath>..\..\..\..\BTD6 DLLs References\Newtonsoft.Json.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\Newtonsoft.Json.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="NinjaKiwi.Common">
-        <HintPath>..\..\..\..\BTD6 DLLs References\NinjaKiwi.Common.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\NinjaKiwi.Common.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="NinjaKiwi.LiNK">
-        <HintPath>..\..\..\..\BTD6 DLLs References\NinjaKiwi.LiNK.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\NinjaKiwi.LiNK.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="NKHook6-API">
-        <HintPath>..\..\..\..\BTD6 DLLs References\NKHook6-API.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\NKHook6-API.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnhollowerBaseLib">
-        <HintPath>..\..\..\..\BTD6 DLLs References\UnhollowerBaseLib.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\UnhollowerBaseLib.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnhollowerRuntimeLib">
-        <HintPath>..\..\..\..\BTD6 DLLs References\UnhollowerRuntimeLib.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\UnhollowerRuntimeLib.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Unity.Addressables">
-        <HintPath>..\..\..\..\BTD6 DLLs References\Unity.Addressables.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\Unity.Addressables.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Unity.InputSystem">
-        <HintPath>..\..\..\..\BTD6 DLLs References\Unity.InputSystem.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\Unity.InputSystem.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Unity.ResourceManager">
-        <HintPath>..\..\..\..\BTD6 DLLs References\Unity.ResourceManager.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\Unity.ResourceManager.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Unity.TextMeshPro">
-        <HintPath>..\..\..\..\BTD6 DLLs References\Unity.TextMeshPro.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\Unity.TextMeshPro.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine">
-        <HintPath>..\..\..\..\BTD6 DLLs References\UnityEngine.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\UnityEngine.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.AnimationModule">
-        <HintPath>..\..\..\..\BTD6 DLLs References\UnityEngine.AnimationModule.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\UnityEngine.AnimationModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.AssetBundleModule">
-        <HintPath>..\..\..\..\BTD6 DLLs References\UnityEngine.AssetBundleModule.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\UnityEngine.AssetBundleModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.AudioModule">
-        <HintPath>..\..\..\..\BTD6 DLLs References\UnityEngine.AudioModule.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\UnityEngine.AudioModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.CoreModule">
-        <HintPath>..\..\..\..\BTD6 DLLs References\UnityEngine.CoreModule.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\UnityEngine.CoreModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.Il2CppAssetBundleManager">
-        <HintPath>..\..\..\..\BTD6 DLLs References\UnityEngine.Il2CppAssetBundleManager.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\UnityEngine.Il2CppAssetBundleManager.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.Il2CppImageConversionManager">
-        <HintPath>..\..\..\..\BTD6 DLLs References\UnityEngine.Il2CppImageConversionManager.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\UnityEngine.Il2CppImageConversionManager.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.ImageConversionModule">
-        <HintPath>..\..\..\..\BTD6 DLLs References\UnityEngine.ImageConversionModule.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\UnityEngine.ImageConversionModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.InputLegacyModule">
-        <HintPath>..\..\..\..\BTD6 DLLs References\UnityEngine.InputLegacyModule.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\UnityEngine.InputLegacyModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.JSONSerializeModule">
-        <HintPath>..\..\..\..\BTD6 DLLs References\UnityEngine.JSONSerializeModule.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\UnityEngine.JSONSerializeModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.TextRenderingModule">
-        <HintPath>..\..\..\..\BTD6 DLLs References\UnityEngine.TextRenderingModule.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\UnityEngine.TextRenderingModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.UI">
-        <HintPath>..\..\..\..\BTD6 DLLs References\UnityEngine.UI.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\UnityEngine.UI.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.UIElementsModule">
-        <HintPath>..\..\..\..\BTD6 DLLs References\UnityEngine.UIElementsModule.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\UnityEngine.UIElementsModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.UIModule">
-        <HintPath>..\..\..\..\BTD6 DLLs References\UnityEngine.UIModule.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\UnityEngine.UIModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="ValueTupleBridge">
-        <HintPath>..\..\..\..\BTD6 DLLs References\ValueTupleBridge.dll</HintPath>
+        <HintPath>..\..\..\BTD6 DLLs References\ValueTupleBridge.dll</HintPath>
         <Private>False</Private>
       </Reference>
     </ItemGroup>

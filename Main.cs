@@ -47,6 +47,7 @@ using Il2CppAssets.Scripts.Simulation.Towers.Behaviors.Attack.Behaviors;
 using Il2CppAssets.Scripts.Simulation.Towers.Emissions;
 using Il2CppAssets.Scripts.Unity.Towers.Emissions;
 using Il2CppSystem.Dynamic.Utils;
+using Il2Cpp;
 
 [assembly: MelonInfo(typeof(UpgradableShootyTurret.Main), UpgradableShootyTurret.ModHelperData.Name, UpgradableShootyTurret.ModHelperData.Version, UpgradableShootyTurret.ModHelperData.RepoOwner)]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
@@ -113,7 +114,7 @@ namespace UpgradableShootyTurret
         {
             public override string Name => "EnhancedMechanisms";
             public override string DisplayName => "Enhanced Mechanisms";
-            public override string Description => "Arrows do more damage and the Shooty Turret shoots them faster!";
+            public override string Description => "Arrows do more damage and the Shooty Turret shoots them faster and can pop camo bloons!";
             public override int Cost => 500;
             public override int Path => TOP;
             public override int Tier => 2;
@@ -122,6 +123,7 @@ namespace UpgradableShootyTurret
                 AttackModel attackModel = towerModel.GetBehavior<AttackModel>();
                 attackModel.weapons[0].Rate *= 0.7f;
                 attackModel.weapons[0].projectile.GetDamageModel().damage += 2;
+                towerModel.AddBehavior(new OverrideCamoDetectionModel("OverrideCamoDetectionModel_", true));
             }
             public override string Icon => "6dc10060b4cb6174992724ee4ff00d95";
             public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
@@ -153,16 +155,18 @@ namespace UpgradableShootyTurret
         {
             public override string Name => "Tripapult";
             public override string DisplayName => "Tripapult";
-            public override string Description => "Give the catapult 3 shots.";
+            public override string Description => "Give the catapult 3 shots and can pop any bloon type.";
             public override int Cost => 5000;
             public override int Path => TOP;
             public override int Tier => 4;
             public override void ApplyUpgrade(TowerModel towerModel)
             {
                 AttackModel attackModel = towerModel.GetBehavior<AttackModel>();
+                attackModel.weapons[0].projectile.display = new PrefabReference() { guidRef = "ee74983d627954e4e9765d86e05b4500" };
                 towerModel.display = new PrefabReference() { guidRef = "9a4bf86ce3861a64c9e118a693db992f" };
                 towerModel.GetBehavior<DisplayModel>().display = new PrefabReference() { guidRef = "9a4bf86ce3861a64c9e118a693db992f" };
                 attackModel.weapons[0].emission = new ArcEmissionModel("ArcEmissionModel_Tripapult", 3, 0, 15, null, false);
+                attackModel.weapons[0].projectile.GetDamageModel().immuneBloonProperties = BloonProperties.None;
                 attackModel.weapons[0].projectile.GetDamageModel().damage += 2;
             }
             public override string Icon => "6dc10060b4cb6174992724ee4ff00d95";
@@ -179,39 +183,15 @@ namespace UpgradableShootyTurret
             public override void ApplyUpgrade(TowerModel towerModel)
             {
                 AttackModel attackModel = towerModel.GetBehavior<AttackModel>();
+                attackModel.weapons[0].projectile.display = new PrefabReference() { guidRef = "c4b8e7aa3e07d764fb9c3c773ceec2ab" };
+                towerModel.display = new PrefabReference() { guidRef = "b194c58ed09f1aa468e935b453c6843c" };
+                towerModel.GetBehavior<DisplayModel>().display = new PrefabReference() { guidRef = "b194c58ed09f1aa468e935b453c6843c" };
+                attackModel.weapons[0].projectile.CanHitCamo();
+
                 attackModel.weapons[0].projectile.AddBehavior<CreateProjectileOnContactModel>(new CreateProjectileOnContactModel("CreateProjectileOnContactModel_Megapult", ModelExt.Duplicate<ProjectileModel>(attackModel.weapons[0].projectile), new ArcEmissionModel("ArcEmissionModel_Megapult", 2, 0f, 0f, null, true), false, false, true));
             }
             public override string Icon => "6dc10060b4cb6174992724ee4ff00d95";
             public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
         }
-
-
-        /*[HarmonyLib.HarmonyPatch(typeof(InGame), "Update")]
-        public class Update_Patch
-            {
-                [HarmonyLib.HarmonyPostfix]
-                public static void Postfix()
-                {
-                if (!(InGame.instance != null && InGame.instance.bridge != null)) return;
-                try
-                {
-                    foreach (var tts in InGame.Bridge.GetAllTowers())
-                    {
-
-                        if (!tts.namedMonkeyKey.ToLower().Contains("UpgradableShootyTurret")) continue;
-                        if (tts?.tower?.Node?.graphic?.transform != null)
-                        {
-                            tts.tower.Node.graphic.transform.localScale = new UnityEngine.Vector3(1f, 1f, 1f);
-
-                        }
-
-                    }
-                }
-                catch
-                {
-
-                }
-            }
-        }*/
     }
 }
