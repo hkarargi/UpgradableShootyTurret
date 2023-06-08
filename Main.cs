@@ -94,8 +94,8 @@ namespace UpgradableShootyTurret
             }
             public override bool IsValidCrosspath(int[] tiers) =>
             ModHelper.HasMod("UltimateCrosspathing") || base.IsValidCrosspath(tiers);
-            public override string Icon => "6dc10060b4cb6174992724ee4ff00d95";
-            public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
+            public override string Icon => "Icon";
+            public override string Portrait => "Icon";
         }
         public class FasterMechanisms : ModUpgrade<UpgradableShootyTurret>
         {
@@ -110,8 +110,8 @@ namespace UpgradableShootyTurret
                 AttackModel attackModel = towerModel.GetBehavior<AttackModel>();
                 attackModel.weapons[0].Rate *= 0.8f;
             }
-            public override string Icon => "6dc10060b4cb6174992724ee4ff00d95";
-            public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
+            public override string Icon => "TopTier1";
+            public override string Portrait => "Icon";
         }
         public class EnhancedMechanisms : ModUpgrade<UpgradableShootyTurret>
         {
@@ -128,8 +128,8 @@ namespace UpgradableShootyTurret
                 attackModel.weapons[0].projectile.GetDamageModel().damage += 2;
                 towerModel.AddBehavior(new OverrideCamoDetectionModel("OverrideCamoDetectionModel_", true));
             }
-            public override string Icon => "6dc10060b4cb6174992724ee4ff00d95";
-            public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
+            public override string Icon => "TopTier2";
+            public override string Portrait => "Icon";
         }
         public class Catapult : ModUpgrade<UpgradableShootyTurret>
         {
@@ -150,8 +150,8 @@ namespace UpgradableShootyTurret
                 attackModel.weapons[0].projectile.GetDamageModel().damage += 3;
                 attackModel.weapons[0].projectile.pierce += 5;
             }
-            public override string Icon => "6dc10060b4cb6174992724ee4ff00d95";
-            public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
+            public override string Icon => "TopTier3";
+            public override string Portrait => "Icon";
         }
         
         public class Tripapult : ModUpgrade<UpgradableShootyTurret>
@@ -172,8 +172,8 @@ namespace UpgradableShootyTurret
                 attackModel.weapons[0].projectile.GetDamageModel().immuneBloonProperties = BloonProperties.None;
                 attackModel.weapons[0].projectile.GetDamageModel().damage += 2;
             }
-            public override string Icon => "6dc10060b4cb6174992724ee4ff00d95";
-            public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
+            public override string Icon => "TopTier4";
+            public override string Portrait => "Icon";
         }
         public class Megapult : ModUpgrade<UpgradableShootyTurret>
         {
@@ -193,8 +193,8 @@ namespace UpgradableShootyTurret
 
                 attackModel.weapons[0].projectile.AddBehavior<CreateProjectileOnContactModel>(new CreateProjectileOnContactModel("CreateProjectileOnContactModel_Megapult", ModelExt.Duplicate<ProjectileModel>(attackModel.weapons[0].projectile), new ArcEmissionModel("ArcEmissionModel_Megapult", 2, 0f, 0f, null, true, true), false, false, true));
             }
-            public override string Icon => "6dc10060b4cb6174992724ee4ff00d95";
-            public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
+            public override string Icon => "TopTier5";
+            public override string Portrait => "Icon";
         }
         public class PiercingShots : ModUpgrade<UpgradableShootyTurret>
         {
@@ -209,8 +209,8 @@ namespace UpgradableShootyTurret
                 AttackModel attackModel = towerModel.GetBehavior<AttackModel>();
                 attackModel.weapons[0].projectile.pierce += 2;
             }
-            public override string Icon => "6dc10060b4cb6174992724ee4ff00d95";
-            public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
+            public override string Icon => "MiddleTier1";
+            public override string Portrait => "Icon";
         }
         public class SharperArrows : ModUpgrade<UpgradableShootyTurret>
         {
@@ -226,8 +226,8 @@ namespace UpgradableShootyTurret
                 attackModel.weapons[0].projectile.GetDamageModel().damage += 4;
                 attackModel.weapons[0].projectile.pierce += 2;
             }
-            public override string Icon => "6dc10060b4cb6174992724ee4ff00d95";
-            public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
+            public override string Icon => "MiddleTier2";
+            public override string Portrait => "Icon";
         }
         public class ExplosiveArrows : ModUpgrade<UpgradableShootyTurret>
         {
@@ -269,8 +269,8 @@ namespace UpgradableShootyTurret
                     towerModel.RemoveBehavior(towerModel.behaviors.First(a => a.name == "DisplayModel_UST_Top"));
                 }
             }
-            public override string Icon => "6dc10060b4cb6174992724ee4ff00d95";
-            public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
+            public override string Icon => "MiddleTier3";
+            public override string Portrait => "Icon";
         }
         public class MachineGun : ModUpgrade<UpgradableShootyTurret>
         {
@@ -289,21 +289,22 @@ namespace UpgradableShootyTurret
                 towerModel.GetAbility().GetBehavior<TurboModel>().multiplier = 0.125f;
                 towerModel.GetAbility().GetBehavior<TurboModel>().Lifespan = 15;
                 towerModel.GetAbility().Cooldown = 30;
-                attackModel.weapons[0].Rate *= 0.75f;
+                attackModel.weapons[0].Rate *= 0.375f;
+                attackModel.weapons[0].projectile.GetBehavior<TravelStraitModel>().Speed *= 1.5f;
                 towerModel.display = new PrefabReference() { guidRef = "ea0dfb74811b4774683b38311b64794c" };
                 towerModel.GetBehavior<DisplayModel>().display = new PrefabReference() { guidRef = "ea0dfb74811b4774683b38311b64794c" };
                 attackModel.range *= 2;
                 towerModel.range *= 2;
             }
-            public override string Icon => "6dc10060b4cb6174992724ee4ff00d95";
-            public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
+            public override string Icon => "MiddleTier4";
+            public override string Portrait => "Icon";
         }
     }
     public class HeavyMachineGun : ModUpgrade<UpgradableShootyTurret.Main.UpgradableShootyTurret>
     {
         public override string Name => "HeavyMachineGun";
         public override string DisplayName => "Heavy Machine Gun";
-        public override string Description => "The Shooty Turret was installed with a bigger and better machine gun!";
+        public override string Description => "The Shooty Turret was installed with a bigger and better machine gun that has infinite range!";
         public override int Cost => 50000;
         public override int Path => MIDDLE;
         public override int Tier => 5;
@@ -316,11 +317,12 @@ namespace UpgradableShootyTurret
             towerModel.GetAbility().GetBehavior<TurboModel>().multiplier = 0.0625f;
             towerModel.GetAbility().GetBehavior<TurboModel>().extraDamage = 10;
             towerModel.GetAbility().GetBehavior<TurboModel>().Lifespan = 20;
-            attackModel.weapons[0].Rate *= 0.5f;
-            attackModel.range *= 2;
-            towerModel.range *= 2;
+            attackModel.weapons[0].Rate *= 0.25f;
+            attackModel.range = 9999999999;
+            towerModel.range = 10;
+            attackModel.weapons[0].projectile.GetBehavior<TravelStraitModel>().Speed *= 10f;
         }
-        public override string Icon => "6dc10060b4cb6174992724ee4ff00d95";
-        public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
+        public override string Icon => "MiddleTier5";
+        public override string Portrait => "Icon";
     }
 }

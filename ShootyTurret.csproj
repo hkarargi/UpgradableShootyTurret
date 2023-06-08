@@ -11,10 +11,20 @@
         <BaseOutputPath></BaseOutputPath>
     </PropertyGroup>
     <ItemGroup>
+      <None Remove="MT1.png" />
+      <None Remove="MT2.png" />
+      <None Remove="MT3.png" />
+      <None Remove="MT4.png" />
+      <None Remove="MT5.png" />
       <None Remove="ShootyTurret.png" />
+      <None Remove="TT1.png" />
+      <None Remove="TT2.png" />
+      <None Remove="TT3.png" />
+      <None Remove="TT4.png" />
+      <None Remove="TT5.png" />
     </ItemGroup>
     <ItemGroup>
-      <EmbeddedResource Include="ShootyTurret.png" />
+      <EmbeddedResource Include="Icon.png" />
     </ItemGroup>
     <ItemGroup>
       <Reference Include="0Harmony">
