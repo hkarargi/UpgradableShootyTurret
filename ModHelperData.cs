@@ -11,6 +11,6 @@ namespace UpgradableShootyTurret
 
         public const string RepoOwner = "hkarargi";
         public const string RepoName = "UpgradableShootyTurret";
-        public const string Icon = "ShootyTurret";
+        public const string Icon = "Icon.png";
     }
 }
