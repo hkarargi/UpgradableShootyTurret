@@ -3,7 +3,7 @@ namespace UpgradableShootyTurret
     public static class ModHelperData
     {
         public const string WorksOnVersion = "37.0";
-        public const string Version = "2.2.0";
+        public const string Version = "2.2.1";
         public const string Name = "Upgradable Shooty Turret";
 
         public const string Description =

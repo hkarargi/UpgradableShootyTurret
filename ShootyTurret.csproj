@@ -11,6 +11,16 @@
         <BaseOutputPath></BaseOutputPath>
     </PropertyGroup>
     <ItemGroup>
+      <None Remove="Assets\Middle\MiddleTier1.png" />
+      <None Remove="Assets\Middle\MiddleTier2.png" />
+      <None Remove="Assets\Middle\MiddleTier3.png" />
+      <None Remove="Assets\Middle\MiddleTier4.png" />
+      <None Remove="Assets\Middle\MiddleTier5.png" />
+      <None Remove="Assets\Top\TopTier1.png" />
+      <None Remove="Assets\Top\TopTier2.png" />
+      <None Remove="Assets\Top\TopTier3.png" />
+      <None Remove="Assets\Top\TopTier4.png" />
+      <None Remove="Assets\Top\TopTier5.png" />
       <None Remove="MT1.png" />
       <None Remove="MT2.png" />
       <None Remove="MT3.png" />
@@ -24,6 +34,16 @@
       <None Remove="TT5.png" />
     </ItemGroup>
     <ItemGroup>
+      <EmbeddedResource Include="Assets\Middle\MiddleTier1.png" />
+      <EmbeddedResource Include="Assets\Middle\MiddleTier2.png" />
+      <EmbeddedResource Include="Assets\Middle\MiddleTier3.png" />
+      <EmbeddedResource Include="Assets\Middle\MiddleTier4.png" />
+      <EmbeddedResource Include="Assets\Middle\MiddleTier5.png" />
+      <EmbeddedResource Include="Assets\Top\TopTier1.png" />
+      <EmbeddedResource Include="Assets\Top\TopTier2.png" />
+      <EmbeddedResource Include="Assets\Top\TopTier3.png" />
+      <EmbeddedResource Include="Assets\Top\TopTier4.png" />
+      <EmbeddedResource Include="Assets\Top\TopTier5.png" />
       <EmbeddedResource Include="Icon.png" />
     </ItemGroup>
     <ItemGroup>
