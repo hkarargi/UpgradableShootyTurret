@@ -92,6 +92,8 @@ namespace UpgradableShootyTurret
                 towerModel.display = new PrefabReference() { guidRef = "c834b6ab8cd5afc429065acb83992abb" };
                 towerModel.GetBehavior<DisplayModel>().display = new PrefabReference() { guidRef = "c834b6ab8cd5afc429065acb83992abb" };
             }
+            public override bool IsValidCrosspath(int[] tiers) =>
+            ModHelper.HasMod("UltimateCrosspathing") || base.IsValidCrosspath(tiers);
             public override string Icon => "6dc10060b4cb6174992724ee4ff00d95";
             public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
         }
@@ -262,7 +264,10 @@ namespace UpgradableShootyTurret
                 towerModel.display = new PrefabReference() { guidRef = "26a654b46fa1fa6498a4a6e40c93a406" };
                 towerModel.GetBehavior<DisplayModel>().display = new PrefabReference() { guidRef = "26a654b46fa1fa6498a4a6e40c93a406" };
                 towerModel.GetBehavior<DisplayModel>().ignoreRotation = false;
-                towerModel.RemoveBehavior(towerModel.behaviors.First(a => a.name == "DisplayModel_UST_Top"));
+                if (towerModel.tiers[0] < 3)
+                {
+                    towerModel.RemoveBehavior(towerModel.behaviors.First(a => a.name == "DisplayModel_UST_Top"));
+                }
             }
             public override string Icon => "6dc10060b4cb6174992724ee4ff00d95";
             public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
@@ -287,6 +292,8 @@ namespace UpgradableShootyTurret
                 attackModel.weapons[0].Rate *= 0.75f;
                 towerModel.display = new PrefabReference() { guidRef = "ea0dfb74811b4774683b38311b64794c" };
                 towerModel.GetBehavior<DisplayModel>().display = new PrefabReference() { guidRef = "ea0dfb74811b4774683b38311b64794c" };
+                attackModel.range *= 2;
+                towerModel.range *= 2;
             }
             public override string Icon => "6dc10060b4cb6174992724ee4ff00d95";
             public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
@@ -310,6 +317,8 @@ namespace UpgradableShootyTurret
             towerModel.GetAbility().GetBehavior<TurboModel>().extraDamage = 10;
             towerModel.GetAbility().GetBehavior<TurboModel>().Lifespan = 20;
             attackModel.weapons[0].Rate *= 0.5f;
+            attackModel.range *= 2;
+            towerModel.range *= 2;
         }
         public override string Icon => "6dc10060b4cb6174992724ee4ff00d95";
         public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
