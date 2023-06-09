@@ -320,7 +320,7 @@ namespace UpgradableShootyTurret
             attackModel.weapons[0].Rate *= 0.25f;
             attackModel.range = 9999999999;
             towerModel.range = 10;
-            attackModel.weapons[0].projectile.GetBehavior<TravelStraitModel>().Speed *= 10f;
+            attackModel.weapons[0].projectile.GetBehavior<TravelStraitModel>().Speed *= 1.75f;
         }
         public override string Icon => "MiddleTier5";
         public override string Portrait => "Icon";
