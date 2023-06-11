@@ -49,6 +49,7 @@ using Il2Cpp;
 using Il2CppAssets.Scripts.Simulation.Towers.Projectiles;
 using Il2CppAssets.Scripts.Unity.Towers.Projectiles;
 using BTD_Mod_Helper.Api.Enums;
+using static Il2CppSystem.TypeIdentifiers;
 
 [assembly: MelonInfo(typeof(UpgradableShootyTurret.Main), UpgradableShootyTurret.ModHelperData.Name, UpgradableShootyTurret.ModHelperData.Version, UpgradableShootyTurret.ModHelperData.RepoOwner)]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
@@ -68,7 +69,7 @@ namespace UpgradableShootyTurret
             public override int Cost => 500;
             public override int TopPathUpgrades => 5;
             public override int MiddlePathUpgrades => 5;
-            public override int BottomPathUpgrades => 0;
+            public override int BottomPathUpgrades => 5;
             public override Il2CppAssets.Scripts.Models.TowerSets.TowerSet TowerSet => Il2CppAssets.Scripts.Models.TowerSets.TowerSet.Support;
             public override void ModifyBaseTowerModel(TowerModel towerModel)
             {
@@ -179,7 +180,7 @@ namespace UpgradableShootyTurret
         {
             public override string Name => "Megapult";
             public override string DisplayName => "Megapult";
-            public override string Description => "Each projectile clusters into 2 projectiles.";
+            public override string Description => "Each projectile clusters into 2 projectiles. It also increases its damage every round past round 80!";
             public override int Cost => 27500;
             public override int Path => TOP;
             public override int Tier => 5;
@@ -189,9 +190,11 @@ namespace UpgradableShootyTurret
                 attackModel.weapons[0].projectile.display = new PrefabReference() { guidRef = "c4b8e7aa3e07d764fb9c3c773ceec2ab" };
                 towerModel.display = new PrefabReference() { guidRef = "b194c58ed09f1aa468e935b453c6843c" };
                 towerModel.GetBehavior<DisplayModel>().display = new PrefabReference() { guidRef = "b194c58ed09f1aa468e935b453c6843c" };
-                attackModel.weapons[0].projectile.CanHitCamo();
-
                 attackModel.weapons[0].projectile.AddBehavior<CreateProjectileOnContactModel>(new CreateProjectileOnContactModel("CreateProjectileOnContactModel_Megapult", ModelExt.Duplicate<ProjectileModel>(attackModel.weapons[0].projectile), new ArcEmissionModel("ArcEmissionModel_Megapult", 2, 0f, 0f, null, true, true), false, false, true));
+                if (InGame.Bridge.GetCurrentRound() > 80)
+                {
+                    attackModel.weapons[0].projectile.GetDamageModel().damage *= (InGame.Bridge.GetCurrentRound() / 50);
+                }
             }
             public override string Icon => "TopTier5";
             public override string Portrait => "Icon";
@@ -304,7 +307,7 @@ namespace UpgradableShootyTurret
     {
         public override string Name => "HeavyMachineGun";
         public override string DisplayName => "Heavy Machine Gun";
-        public override string Description => "The Shooty Turret was installed with a bigger and better machine gun that has infinite range!";
+        public override string Description => "The Shooty Turret was installed with a bigger and better machine gun that has infinite range! It also increases its damage every round past round 80!";
         public override int Cost => 50000;
         public override int Path => MIDDLE;
         public override int Tier => 5;
@@ -321,8 +324,127 @@ namespace UpgradableShootyTurret
             attackModel.range = 9999999999;
             towerModel.range = 10;
             attackModel.weapons[0].projectile.GetBehavior<TravelStraitModel>().Speed *= 1.75f;
+            if (InGame.Bridge.GetCurrentRound() > 80)
+            {
+                attackModel.weapons[0].projectile.GetDamageModel().damage *= (InGame.Bridge.GetCurrentRound() / 50);
+            }
         }
         public override string Icon => "MiddleTier5";
+        public override string Portrait => "Icon";
+    }
+    public class PainArrows : ModUpgrade<UpgradableShootyTurret.Main.UpgradableShootyTurret>
+    {
+        public override string Name => "PainArrows";
+        public override string DisplayName => "Pain Arrows";
+        public override string Description => "Arrows deal more damage and are faster!";
+        public override int Cost => 750;
+        public override int Path => BOTTOM;
+        public override int Tier => 1;
+        public override void ApplyUpgrade(TowerModel towerModel)
+        {
+            AttackModel attackModel = towerModel.GetBehavior<AttackModel>();
+            attackModel.weapons[0].projectile.GetDamageModel().damage += 4;
+            attackModel.weapons[0].projectile.GetBehavior<TravelStraitModel>().Speed *= 1.5f;
+        }
+        public override string Icon => "BottomTier1";
+        public override string Portrait => "Icon";
+    }
+    public class BloontoniumArrows : ModUpgrade<UpgradableShootyTurret.Main.UpgradableShootyTurret>
+    {
+        public override string Name => "BloontoniumArrows";
+        public override string DisplayName => "Bloontonium Arrows";
+        public override string Description => "Arrows deal more damage now can pop lead!";
+        public override int Cost => 1500;
+        public override int Path => BOTTOM;
+        public override int Tier => 2;
+        public override void ApplyUpgrade(TowerModel towerModel)
+        {
+            AttackModel attackModel = towerModel.GetBehavior<AttackModel>();
+            attackModel.weapons[0].projectile.GetDamageModel().damage += 4;
+            attackModel.weapons[0].projectile.GetDamageModel().immuneBloonProperties = BloonProperties.None;
+        }
+        public override string Icon => "BottomTier2";
+        public override string Portrait => "Icon";
+    }
+    public class HomingArrows : ModUpgrade<UpgradableShootyTurret.Main.UpgradableShootyTurret>
+    {
+        public override string Name => "HomingArrows";
+        public override string DisplayName => "Homing Arrows";
+        public override string Description => "Arrows now follow bloons and are larger.";
+        public override int Cost => 3000;
+        public override int Path => BOTTOM;
+        public override int Tier => 3;
+        public override void ApplyUpgrade(TowerModel towerModel)
+        {
+            AttackModel attackModel = towerModel.GetBehavior<AttackModel>();
+            towerModel.displayScale *= 1.25f;
+            towerModel.GetBehavior<DisplayModel>().scale *= 1.25f;
+            attackModel.weapons[0].projectile.scale *= 1.25f;
+            attackModel.weapons[0].projectile.GetBehavior<DisplayModel>().scale *= 1.25f;
+            attackModel.range *= 1.25f;
+            towerModel.range *= 1.25f;
+            var homing = Game.instance.model.GetTowerFromId("NinjaMonkey-001").GetWeapon().projectile
+                .GetBehavior<TrackTargetWithinTimeModel>().Duplicate();
+            attackModel.weapons[0].projectile.AddBehavior(homing);
+            attackModel.weapons[0].projectile.GetDamageModel().damage += 6;
+            attackModel.weapons[0].Rate *= 0.5f;
+            towerModel.GetBehaviors<DisplayModel>().First(a => a.name == "DisplayModel_UST_Top").display = new PrefabReference() { guidRef = "3b7505fd21be1fe42ad9b627219c2e43" };
+            attackModel.weapons[0].projectile.pierce += 2;
+        }
+        public override string Icon => "BottomTier3";
+        public override string Portrait => "Icon";
+    }
+    public class BloonDeletion : ModUpgrade<UpgradableShootyTurret.Main.UpgradableShootyTurret>
+    {
+        public override string Name => "BloonDeletion";
+        public override string DisplayName => "Bloon Deletion";
+        public override string Description => "The Shooty turret now shoots faster and deals alot more damage with way more pierce and the ability to pop camo.";
+        public override int Cost => 25000;
+        public override int Path => BOTTOM;
+        public override int Tier => 4;
+        public override void ApplyUpgrade(TowerModel towerModel)
+        {
+            AttackModel attackModel = towerModel.GetBehavior<AttackModel>();
+            towerModel.displayScale *= 1.25f;
+            towerModel.GetBehavior<DisplayModel>().scale *= 1.25f;
+            attackModel.weapons[0].projectile.scale *= 1.25f;
+            attackModel.range *= 1.25f;
+            towerModel.range *= 1.25f;
+            attackModel.weapons[0].projectile.GetBehavior<DisplayModel>().scale *= 1.25f;
+            attackModel.weapons[0].projectile.GetDamageModel().damage += 100;
+            attackModel.weapons[0].projectile.pierce += 100;
+            attackModel.weapons[0].Rate *= 0.75f;
+            towerModel.AddBehavior(new OverrideCamoDetectionModel("OverrideCamoDetectionModel_", true));
+        }
+        public override string Icon => "BottomTier4";
+        public override string Portrait => "Icon";
+    }
+    public class UtterDeletion : ModUpgrade<UpgradableShootyTurret.Main.UpgradableShootyTurret>
+    {
+        public override string Name => "UtterDeletion";
+        public override string DisplayName => "UtterDeletion";
+        public override string Description => "THE BLOONS ARE NO MORE. It also increases its damage every round past round 80!";
+        public override int Cost => 100000;
+        public override int Path => BOTTOM;
+        public override int Tier => 5;
+        public override void ApplyUpgrade(TowerModel towerModel)
+        {
+            AttackModel attackModel = towerModel.GetBehavior<AttackModel>();
+            towerModel.displayScale *= 1.5f;
+            towerModel.GetBehavior<DisplayModel>().scale *= 1.5f;
+            attackModel.weapons[0].projectile.scale *= 1.5f;
+            attackModel.weapons[0].projectile.GetBehavior<DisplayModel>().scale *= 1.25f;
+            attackModel.weapons[0].projectile.GetDamageModel().damage = 1000;
+            attackModel.weapons[0].projectile.pierce = 9999999999;
+            attackModel.weapons[0].Rate = 0.25f;
+            attackModel.range *= 1.5f;
+            towerModel.range *= 1.5f;
+            if (InGame.Bridge.GetCurrentRound() > 80) 
+            {
+                attackModel.weapons[0].projectile.GetDamageModel().damage *= (InGame.Bridge.GetCurrentRound()/50);
+            }
+        }
+        public override string Icon => "BottomTier5";
         public override string Portrait => "Icon";
     }
 }

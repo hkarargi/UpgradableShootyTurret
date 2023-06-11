@@ -11,6 +11,11 @@
         <BaseOutputPath></BaseOutputPath>
     </PropertyGroup>
     <ItemGroup>
+      <None Remove="Assets\Bottom\BottomTier1.png" />
+      <None Remove="Assets\Bottom\BottomTier2.png" />
+      <None Remove="Assets\Bottom\BottomTier3.png" />
+      <None Remove="Assets\Bottom\BottomTier4.png" />
+      <None Remove="Assets\Bottom\BottomTier5.png" />
       <None Remove="Assets\Middle\MiddleTier1.png" />
       <None Remove="Assets\Middle\MiddleTier2.png" />
       <None Remove="Assets\Middle\MiddleTier3.png" />
@@ -34,6 +39,11 @@
       <None Remove="TT5.png" />
     </ItemGroup>
     <ItemGroup>
+      <EmbeddedResource Include="Assets\Bottom\BottomTier1.png" />
+      <EmbeddedResource Include="Assets\Bottom\BottomTier2.png" />
+      <EmbeddedResource Include="Assets\Bottom\BottomTier3.png" />
+      <EmbeddedResource Include="Assets\Bottom\BottomTier4.png" />
+      <EmbeddedResource Include="Assets\Bottom\BottomTier5.png" />
       <EmbeddedResource Include="Assets\Middle\MiddleTier1.png" />
       <EmbeddedResource Include="Assets\Middle\MiddleTier2.png" />
       <EmbeddedResource Include="Assets\Middle\MiddleTier3.png" />
