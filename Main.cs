@@ -152,10 +152,6 @@ namespace UpgradableShootyTurret
                 towerModel.display = new PrefabReference() { guidRef = "b194c58ed09f1aa468e935b453c6843c" };
                 towerModel.GetBehavior<DisplayModel>().display = new PrefabReference() { guidRef = "b194c58ed09f1aa468e935b453c6843c" };
                 attackModel.weapons[0].projectile.AddBehavior<CreateProjectileOnContactModel>(new CreateProjectileOnContactModel("CreateProjectileOnContactModel_Megapult", ModelExt.Duplicate<ProjectileModel>(attackModel.weapons[0].projectile), new ArcEmissionModel("ArcEmissionModel_Megapult", 2, 0f, 0f, null, true, true), false, false, true));
-                if (InGame.Bridge.GetCurrentRound() > 80)
-                {
-                    attackModel.weapons[0].projectile.GetDamageModel().damage *= (InGame.Bridge.GetCurrentRound() / 50);
-                }
             }
             public override string Portrait => "Icon";
         }
@@ -280,10 +276,6 @@ namespace UpgradableShootyTurret
             attackModel.range = 9999999999;
             towerModel.range = 10;
             attackModel.weapons[0].projectile.GetBehavior<TravelStraitModel>().Speed *= 1.75f;
-            if (InGame.Bridge.GetCurrentRound() > 80)
-            {
-                attackModel.weapons[0].projectile.GetDamageModel().damage *= (InGame.Bridge.GetCurrentRound() / 50);
-            }
         }
         public override string Portrait => "Icon";
     }
@@ -390,10 +382,6 @@ namespace UpgradableShootyTurret
             attackModel.weapons[0].Rate = 0.25f;
             attackModel.range *= 1.5f;
             towerModel.range *= 1.5f;
-            if (InGame.Bridge.GetCurrentRound() > 80) 
-            {
-                attackModel.weapons[0].projectile.GetDamageModel().damage *= (InGame.Bridge.GetCurrentRound()/50);
-            }
         }
         public override string Portrait => "Icon";
     }
