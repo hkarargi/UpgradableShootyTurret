@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <RootNamespace>UpgradableShootyTurret</RootNamespace>
+        <Configurations>Debug;Release</Configurations>
+        <Nullable>enable</Nullable>
+        <AssemblyName>UpgradableShootyTurret</AssemblyName>
+        <LangVersion>latest</LangVersion>
+        <Optimize>False</Optimize>
+        <DebugType>embedded</DebugType>
+        <BaseOutputPath></BaseOutputPath>
+        <PlatformTarget>AnyCPU</PlatformTarget>
+    </PropertyGroup>
+  <Import Project="..\btd6.targets" />
+</Project>
