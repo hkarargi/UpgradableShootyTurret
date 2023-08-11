@@ -10,6 +10,19 @@
         <DebugType>embedded</DebugType>
         <BaseOutputPath></BaseOutputPath>
         <PlatformTarget>AnyCPU</PlatformTarget>
+        <ApplicationIcon>ShootyTurretIcon.ico</ApplicationIcon>
     </PropertyGroup>
   <Import Project="..\btd6.targets" />
+  <ItemGroup>
+    <Compile Remove="GenieBottle\GenieBottle.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="ShootyTurretIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ShootyTurretIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GenieBottle\GenieBottle.cs" />
+  </ItemGroup>
 </Project>

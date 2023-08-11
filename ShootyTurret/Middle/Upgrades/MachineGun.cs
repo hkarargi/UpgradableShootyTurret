@@ -15,7 +15,7 @@ public class MachineGun : ModUpgrade<UpgradableShootyTurretModTower>
     public override string Name => "MachineGun";
     public override string DisplayName => "Machine Gun";
     public override string Description => "The Shooty Turret has been installed with a gun that can shoot arrows faster than usual! Now it can more easily destroy bloons!";
-    public override int Cost => 10000;
+    public override int Cost => 75000;
     public override int Path => MIDDLE;
     public override int Tier => 4;
     public override void ApplyUpgrade(TowerModel towerModel)
@@ -34,5 +34,5 @@ public class MachineGun : ModUpgrade<UpgradableShootyTurretModTower>
         attackModel.range *= 2;
         towerModel.range *= 2;
     }
-    public override string Portrait => "ShootyTurretIcon";
+    public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
 }

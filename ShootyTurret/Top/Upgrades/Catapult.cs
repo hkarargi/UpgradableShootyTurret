@@ -12,7 +12,7 @@ public class Catapult : ModUpgrade<UpgradableShootyTurretModTower>
     public override string Name => "Catapult";
     public override string DisplayName => "Catapult";
     public override string Description => "The Shooty Turret becomes a catapult that has more pierce and damage";
-    public override int Cost => 1000;
+    public override int Cost => 2500;
     public override int Path => TOP;
     public override int Tier => 3;
     public override void ApplyUpgrade(TowerModel towerModel)
@@ -26,5 +26,5 @@ public class Catapult : ModUpgrade<UpgradableShootyTurretModTower>
         attackModel.weapons[0].projectile.GetDamageModel().damage += 3;
         attackModel.weapons[0].projectile.pierce += 5;
     }
-    public override string Portrait => "ShootyTurretIcon";
+    public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
 }

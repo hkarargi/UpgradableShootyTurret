@@ -17,7 +17,7 @@ public class ExplosiveArrows : ModUpgrade<UpgradableShootyTurretModTower>
     public override string Name => "ExplosiveArrows";
     public override string DisplayName => "Explosive Arrows";
     public override string Description => "Someone accidently spilled gunpowder on the Shooty Turret's arrows! Now they explode on contact with bloons and also all bloon types even black and camo bloons!";
-    public override int Cost => 1500;
+    public override int Cost => 5000;
     public override int Path => MIDDLE;
     public override int Tier => 3;
     public override void ApplyUpgrade(TowerModel towerModel)
@@ -52,5 +52,5 @@ public class ExplosiveArrows : ModUpgrade<UpgradableShootyTurretModTower>
             towerModel.RemoveBehavior(towerModel.behaviors.First(a => a.name == "DisplayModel_UST_Top"));
         }
     }
-    public override string Portrait => "ShootyTurretIcon";
+    public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
 }

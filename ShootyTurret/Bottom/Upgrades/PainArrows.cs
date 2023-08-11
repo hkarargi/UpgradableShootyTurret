@@ -20,5 +20,5 @@ public class PainArrows : ModUpgrade<UpgradableShootyTurretModTower>
         attackModel.weapons[0].projectile.GetDamageModel().damage += 4;
         attackModel.weapons[0].projectile.GetBehavior<TravelStraitModel>().Speed *= 1.5f;
     }
-    public override string Portrait => "ShootyTurretIcon";
+    public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
 }

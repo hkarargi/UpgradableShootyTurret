@@ -13,7 +13,7 @@ public class Tripapult : ModUpgrade<UpgradableShootyTurretModTower>
     public override string Name => "Tripapult";
     public override string DisplayName => "Tripapult";
     public override string Description => "Give the catapult 3 shots and can pop any bloon type.";
-    public override int Cost => 5000;
+    public override int Cost => 25000;
     public override int Path => TOP;
     public override int Tier => 4;
     public override void ApplyUpgrade(TowerModel towerModel)

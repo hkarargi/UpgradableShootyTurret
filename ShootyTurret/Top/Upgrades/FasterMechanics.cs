@@ -16,7 +16,7 @@ namespace UpgradableShootyTurret.ShootyTurret.Top.Upgrades
         public override string Name => "FasterMechanics";
         public override string DisplayName => "Faster Mechanics";
         public override string Description => "Shooty Turrets shoot faster!";
-        public override int Cost => 250;
+        public override int Cost => 500;
         public override int Path => TOP;
         public override int Tier => 1;
         public override void ApplyUpgrade(TowerModel towerModel)
@@ -24,6 +24,6 @@ namespace UpgradableShootyTurret.ShootyTurret.Top.Upgrades
             AttackModel attackModel = towerModel.GetBehavior<AttackModel>();
             attackModel.weapons[0].Rate *= 0.8f;
         }
-        public override string Portrait => "ShootyTurretIcon";
+        public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
     }
 }

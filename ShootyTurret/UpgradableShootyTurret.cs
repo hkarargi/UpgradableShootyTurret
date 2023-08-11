@@ -1,21 +1,12 @@
-﻿using System.Linq;
-using Il2CppAssets.Scripts.Models.GenericBehaviors;
+﻿using Il2CppAssets.Scripts.Models.GenericBehaviors;
 using Il2CppAssets.Scripts.Models.Towers;
 using Il2CppAssets.Scripts.Models.Towers.Behaviors;
-using Il2CppAssets.Scripts.Models.Towers.Behaviors.Abilities.Behaviors;
 using Il2CppAssets.Scripts.Models.Towers.Behaviors.Attack;
-using Il2CppAssets.Scripts.Models.Towers.Behaviors.Emissions;
 using Il2CppAssets.Scripts.Models.Towers.Projectiles.Behaviors;
-using Il2CppAssets.Scripts.Unity;
-using Il2CppAssets.Scripts.Unity.UI_New.InGame;
 using Il2CppAssets.Scripts.Utils;
-using MelonLoader;
 using BTD_Mod_Helper.Extensions;
-using Il2CppAssets.Scripts.Models.Towers.Projectiles;
 using BTD_Mod_Helper;
 using BTD_Mod_Helper.Api.Towers;
-using Il2Cpp;
-using Il2CppAssets.Scripts.Simulation.Towers.Behaviors;
 
 namespace UpgradableShootyTurret
 {
@@ -34,8 +25,11 @@ namespace UpgradableShootyTurret
             public override int MiddlePathUpgrades => 5;
             public override int BottomPathUpgrades => 5;
             public override Il2CppAssets.Scripts.Models.TowerSets.TowerSet TowerSet => Il2CppAssets.Scripts.Models.TowerSets.TowerSet.Support;
+            //public override bool DontAddToShop => true;
             public override void ModifyBaseTowerModel(TowerModel towerModel)
             {
+                //towerModel.isSubTower = true;
+                
                 //stuff
                 towerModel.GetBehavior<DisplayModel>().ignoreRotation = true;
                 towerModel.AddBehavior(new DisplayModel("DisplayModel_UST_Top", new PrefabReference() { guidRef = "6a8505a5c8dd849489c750e3b65047dc" }, 0, default, default, 1, false, 0));
@@ -61,8 +55,8 @@ namespace UpgradableShootyTurret
             }
             public override bool IsValidCrosspath(int[] tiers) =>
             ModHelper.HasMod("UltimateCrosspathing") || base.IsValidCrosspath(tiers);
-            public override string Icon => "ShootyTurretIcon";
-            public override string Portrait => "ShootyTurretIcon";
+            public override string Icon => "6dc10060b4cb6174992724ee4ff00d95";
+            public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
         }
     }
 }

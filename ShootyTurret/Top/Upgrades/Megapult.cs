@@ -14,7 +14,7 @@ public class Megapult : ModUpgrade<UpgradableShootyTurretModTower>
     public override string Name => "Megapult";
     public override string DisplayName => "Megapult";
     public override string Description => "Each projectile clusters into 2 projectiles.";
-    public override int Cost => 500000;
+    public override int Cost => 250000;
     public override int Path => TOP;
     public override int Tier => 5;
     public override void ApplyUpgrade(TowerModel towerModel)
@@ -26,5 +26,5 @@ public class Megapult : ModUpgrade<UpgradableShootyTurretModTower>
         towerModel.GetBehavior<DisplayModel>().display = new PrefabReference() { guidRef = "b194c58ed09f1aa468e935b453c6843c" };
         attackModel.weapons[0].projectile.AddBehavior<CreateProjectileOnContactModel>(new CreateProjectileOnContactModel("CreateProjectileOnContactModel_Megapult", ModelExt.Duplicate<ProjectileModel>(attackModel.weapons[0].projectile), new ArcEmissionModel("ArcEmissionModel_Megapult", 2, 0f, 0f, null, true, true), false, false, true));
     }
-    public override string Portrait => "ShootyTurretIcon";
+    public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
 }

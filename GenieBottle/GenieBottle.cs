@@ -15,6 +15,8 @@ using Il2CppAssets.Scripts.Models.Towers.Projectiles;
 using BTD_Mod_Helper;
 using BTD_Mod_Helper.Api.Towers;
 using Il2Cpp;
+using Il2CppSystem;
+using Il2CppAssets.Scripts.Models.Towers.Behaviors.Attack.Behaviors;
 
 namespace UpgradableShootyTurret
 {
@@ -35,13 +37,29 @@ namespace UpgradableShootyTurret
             public override Il2CppAssets.Scripts.Models.TowerSets.TowerSet TowerSet => Il2CppAssets.Scripts.Models.TowerSets.TowerSet.Magic;
             public override void ModifyBaseTowerModel(TowerModel towerModel)
             {
+                AttackModel attackModel = towerModel.GetAttackModel();
                 towerModel.RemoveBehavior<RectangleFootprintModel>();
-                towerModel.footprint = new CircleFootprintModel("CircleFootprintModel_", 1f, false, false, false);
+                towerModel.footprint = 
+                    new CircleFootprintModel("CircleFootprintModel_", 1f, false, false, false);
                 towerModel.radius = 3f;
                 towerModel.radiusSquared = 9f;
                 towerModel.display = new PrefabReference() { guidRef = "323d12e1edad69b4e8ceabef67e8f744" };
-                towerModel.GetBehavior<DisplayModel>().display = new PrefabReference() { guidRef = "323d12e1edad69b4e8ceabef67e8f744" };
-                towerModel.GetBehavior<AirUnitModel>().display = new PrefabReference() { guidRef = "056161787db48454a943cbc7384bbfb7" };
+                towerModel.GetBehavior<DisplayModel>().display = 
+                    new PrefabReference() { guidRef = "323d12e1edad69b4e8ceabef67e8f744" };
+                towerModel.GetBehavior<AirUnitModel>().display = 
+                    new PrefabReference() { guidRef = "056161787db48454a943cbc7384bbfb7" };
+                towerModel.RemoveBehaviors<AttackAirUnitModel>();
+                towerModel.AddBehavior(Game.instance.model.GetTowerFromId("GenieBottleTower")
+                    .GetBehaviors<AttackAirUnitModel>()
+                    .First(a => a.name == "AttackAirUnitModel_FigureEight_").Duplicate());
+                towerModel.AddBehavior(Game.instance.model.GetTowerFromId("GenieBottleTower")
+                    .GetBehaviors<AttackAirUnitModel>()
+                    .First(a => a.name == "AttackAirUnitModel_SpectreAttack_").Duplicate());
+                
+                attackModel.GetBehavior<TargetFirstAirUnitModel>().isOnSubTower = false;
+                attackModel.GetBehavior<TargetLastAirUnitModel>().isOnSubTower = false;
+                attackModel.GetBehavior<TargetCloseAirUnitModel>().isOnSubTower = false;
+                attackModel.GetBehavior<TargetStrongAirUnitModel>().isOnSubTower = false;
             }
         }
     }
