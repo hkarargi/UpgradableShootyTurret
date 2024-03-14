@@ -5,10 +5,6 @@ using Il2CppAssets.Scripts.Models.Towers.Behaviors.Attack;
 using Il2CppAssets.Scripts.Models.Towers;
 using static UpgradableShootyTurret.UpgradableShootyTurret;
 using BTD_Mod_Helper.Extensions;
-using Il2CppAssets.Scripts.Models.Bloons.Behaviors;
-using Il2CppAssets.Scripts.Unity;
-using Il2CppAssets.Scripts.Models.Towers.Projectiles;
-using Il2CppAssets.Scripts;
 
 public class BloontoniumArrows : ModUpgrade<UpgradableShootyTurretModTower>
 {
@@ -24,5 +20,5 @@ public class BloontoniumArrows : ModUpgrade<UpgradableShootyTurretModTower>
         attackModel.weapons[0].projectile.GetDamageModel().damage += 4;
         attackModel.weapons[0].projectile.GetDamageModel().immuneBloonProperties = BloonProperties.None;
     }
-    public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
+    public override string Portrait => "ShootyTurretIcon";
 }

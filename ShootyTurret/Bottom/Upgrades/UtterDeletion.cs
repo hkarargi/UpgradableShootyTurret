@@ -10,7 +10,7 @@ public class UtterDeletion : ModUpgrade<UpgradableShootyTurretModTower>
     public override string Name => "UtterDeletion";
     public override string DisplayName => "UtterDeletion";
     public override string Description => "THE BLOONS ARE NO MORE.";
-    public override int Cost => 250000;
+    public override int Cost => 750000;
     public override int Path => BOTTOM;
     public override int Tier => 5;
     public override void ApplyUpgrade(TowerModel towerModel)
@@ -22,9 +22,9 @@ public class UtterDeletion : ModUpgrade<UpgradableShootyTurretModTower>
         attackModel.weapons[0].projectile.GetBehavior<DisplayModel>().scale *= 1.25f;
         attackModel.weapons[0].projectile.GetDamageModel().damage = 10000;
         attackModel.weapons[0].projectile.pierce = 9999999999;
-        attackModel.weapons[0].Rate = 0.5f;
+        attackModel.weapons[0].Rate = 0.25f;
         attackModel.range *= 1.5f;
         towerModel.range *= 1.5f;
     }
-    public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
+    public override string Portrait => "ShootyTurretIcon";
 }

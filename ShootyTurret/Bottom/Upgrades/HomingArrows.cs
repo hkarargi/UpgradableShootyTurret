@@ -15,7 +15,7 @@ public class HomingArrows : ModUpgrade<UpgradableShootyTurretModTower>
     public override string Name => "HomingArrows";
     public override string DisplayName => "Homing Arrows";
     public override string Description => "Arrows now follow bloons and are larger.";
-    public override int Cost => 10000;
+    public override int Cost => 3000;
     public override int Path => BOTTOM;
     public override int Tier => 3;
     public override void ApplyUpgrade(TowerModel towerModel)
@@ -38,5 +38,5 @@ public class HomingArrows : ModUpgrade<UpgradableShootyTurretModTower>
         }
         attackModel.weapons[0].projectile.pierce += 2;
     }
-    public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
+    public override string Portrait => "ShootyTurretIcon";
 }

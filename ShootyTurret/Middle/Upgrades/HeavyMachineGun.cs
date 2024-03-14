@@ -13,7 +13,7 @@ public class HeavyMachineGun : ModUpgrade<UpgradableShootyTurretModTower>
     public override string Name => "HeavyMachineGun";
     public override string DisplayName => "Heavy Machine Gun";
     public override string Description => "The Shooty Turret was installed with a bigger and better machine gun that has infinite range!";
-    public override int Cost => 250000;
+    public override int Cost => 500000;
     public override int Path => MIDDLE;
     public override int Tier => 5;
     public override void ApplyUpgrade(TowerModel towerModel)
@@ -31,5 +31,5 @@ public class HeavyMachineGun : ModUpgrade<UpgradableShootyTurretModTower>
         attackModel.weapons[0].projectile.GetDamageModel().damage = 50;
         attackModel.weapons[0].projectile.GetBehavior<TravelStraitModel>().Speed *= 1.75f;
     }
-    public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
+    public override string Portrait => "ShootyTurretIcon";
 }

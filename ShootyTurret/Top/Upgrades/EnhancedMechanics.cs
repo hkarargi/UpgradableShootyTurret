@@ -10,7 +10,7 @@ public class EnhancedMechanics : ModUpgrade<UpgradableShootyTurretModTower>
     public override string Name => "EnhancedMechanics";
     public override string DisplayName => "Enhanced Mechanics";
     public override string Description => "Arrows do more damage and the Shooty Turret shoots them faster and can pop camo bloons!";
-    public override int Cost => 1000;
+    public override int Cost => 500;
     public override int Path => TOP;
     public override int Tier => 2;
     public override void ApplyUpgrade(TowerModel towerModel)
@@ -20,5 +20,5 @@ public class EnhancedMechanics : ModUpgrade<UpgradableShootyTurretModTower>
         attackModel.weapons[0].projectile.GetDamageModel().damage += 2;
         towerModel.AddBehavior(new OverrideCamoDetectionModel("OverrideCamoDetectionModel_", true));
     }
-    public override string Portrait => "6dc10060b4cb6174992724ee4ff00d95";
+    public override string Portrait => "ShootyTurretIcon";
 }
