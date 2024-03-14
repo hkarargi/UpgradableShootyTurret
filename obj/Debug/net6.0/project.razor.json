@@ -1,0 +1,20 @@
+{
+  "SerializedFilePath": "e:\\BTD6 Modding\\repos\\My Mods\\ShootyTurret\\obj\\Debug\\net6.0\\project.razor.json",
+  "FilePath": "e:\\BTD6 Modding\\repos\\My Mods\\ShootyTurret\\ShootyTurret.csproj",
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 1100
+  },
+  "RootNamespace": null,
+  "Documents": [],
+  "SerializationFormat": "0.3"
+}

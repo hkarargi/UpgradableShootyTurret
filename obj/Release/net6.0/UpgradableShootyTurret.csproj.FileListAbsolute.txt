@@ -1,0 +1,10 @@
+E:\BTD6 Modding\repos\My Mods\UpgradableShootyTurret\bin\Release\net6.0\UpgradableShootyTurret.deps.json
+E:\BTD6 Modding\repos\My Mods\UpgradableShootyTurret\bin\Release\net6.0\UpgradableShootyTurret.dll
+E:\BTD6 Modding\repos\My Mods\UpgradableShootyTurret\obj\Release\net6.0\UpgradableShootyTurret.csproj.AssemblyReference.cache
+E:\BTD6 Modding\repos\My Mods\UpgradableShootyTurret\obj\Release\net6.0\UpgradableShootyTurret.GeneratedMSBuildEditorConfig.editorconfig
+E:\BTD6 Modding\repos\My Mods\UpgradableShootyTurret\obj\Release\net6.0\UpgradableShootyTurret.AssemblyInfoInputs.cache
+E:\BTD6 Modding\repos\My Mods\UpgradableShootyTurret\obj\Release\net6.0\UpgradableShootyTurret.AssemblyInfo.cs
+E:\BTD6 Modding\repos\My Mods\UpgradableShootyTurret\obj\Release\net6.0\UpgradableShootyTurret.csproj.CoreCompileInputs.cache
+E:\BTD6 Modding\repos\My Mods\UpgradableShootyTurret\obj\Release\net6.0\UpgradableShootyTurret.dll
+E:\BTD6 Modding\repos\My Mods\UpgradableShootyTurret\obj\Release\net6.0\refint\UpgradableShootyTurret.dll
+E:\BTD6 Modding\repos\My Mods\UpgradableShootyTurret\obj\Release\net6.0\ref\UpgradableShootyTurret.dll
