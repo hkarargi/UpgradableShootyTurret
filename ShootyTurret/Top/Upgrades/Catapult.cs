@@ -6,6 +6,7 @@ using static UpgradableShootyTurret.UpgradableShootyTurret;
 using BTD_Mod_Helper.Extensions;
 using Il2CppAssets.Scripts.Utils;
 using System.Linq;
+using Il2CppNinjaKiwi.Common.ResourceUtils;
 
 public class Catapult : ModUpgrade<UpgradableShootyTurretModTower>
 {
