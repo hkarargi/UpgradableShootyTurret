@@ -8,6 +8,7 @@ using Il2CppAssets.Scripts.Models.Towers.Projectiles;
 using Il2CppAssets.Scripts.Models.Towers;
 using static UpgradableShootyTurret.UpgradableShootyTurret;
 using Il2CppAssets.Scripts.Utils;
+using Il2CppNinjaKiwi.Common.ResourceUtils;
 
 public class Megapult : ModUpgrade<UpgradableShootyTurretModTower>
 {

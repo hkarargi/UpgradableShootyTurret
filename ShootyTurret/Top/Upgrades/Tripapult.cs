@@ -7,6 +7,7 @@ using Il2CppAssets.Scripts.Models.Towers;
 using static UpgradableShootyTurret.UpgradableShootyTurret;
 using BTD_Mod_Helper.Extensions;
 using Il2CppAssets.Scripts.Utils;
+using Il2CppNinjaKiwi.Common.ResourceUtils;
 
 public class Tripapult : ModUpgrade<UpgradableShootyTurretModTower>
 {

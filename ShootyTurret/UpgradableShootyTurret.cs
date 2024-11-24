@@ -16,6 +16,7 @@ using BTD_Mod_Helper;
 using BTD_Mod_Helper.Api.Towers;
 using Il2Cpp;
 using Il2CppAssets.Scripts.Simulation.Towers.Behaviors;
+using Il2CppNinjaKiwi.Common.ResourceUtils;
 
 namespace UpgradableShootyTurret
 {
