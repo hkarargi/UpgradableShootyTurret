@@ -7,14 +7,14 @@ on:
     tags:
       - '*'
     paths:
-      - BloonsTD6 Mod Helper/**
+      - UpgradableShootyTurret/**
       - .github/workflows/build.yml
   pull_request:
     branches:
       - '*'
 
 env:
-  PROJECT_NAME: Btd6ModHelper
+  PROJECT_NAME: UpgradableShootyTurret
   CSPROJ: "./UpgradableShootyTurret.csproj"
   BLOONSTD6: ./BloonsTD6
 
