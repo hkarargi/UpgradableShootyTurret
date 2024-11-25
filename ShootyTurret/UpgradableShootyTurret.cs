@@ -16,6 +16,7 @@ using BTD_Mod_Helper;
 using BTD_Mod_Helper.Api.Towers;
 using Il2Cpp;
 using Il2CppAssets.Scripts.Simulation.Towers.Behaviors;
+using Il2CppNinjaKiwi.Common.ResourceUtils;
 
 namespace UpgradableShootyTurret
 {
@@ -56,7 +57,7 @@ namespace UpgradableShootyTurret
                 towerModel.display = new PrefabReference() { guidRef = "c834b6ab8cd5afc429065acb83992abb" };
                 towerModel.GetBehavior<DisplayModel>().display = new PrefabReference() { guidRef = "c834b6ab8cd5afc429065acb83992abb" };
                 towerModel.radius = 3f;
-                towerModel.radiusSquared = 9f;
+                towerModel.RadiusSquared = 9f;
                 towerModel.footprint = new CircleFootprintModel("CircleFootprintModel_Circle",3f,false,false,false);
             }
             public override bool IsValidCrosspath(int[] tiers) =>
